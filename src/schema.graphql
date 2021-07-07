@@ -1,0 +1,15 @@
+type Mutation {
+  addUser(name: String!, email: String!): User!
+  sendMessage(text: String!, sender: ID!, receiver: ID!): Messages!
+}
+
+type Query {
+  getAllUser: [User]!
+  getUser(id: ID!): User!
+  getMessage(sender: ID!, receiver: ID!): [Messages]!
+}
+
+type Subscription {
+  userAdded: User!
+  messageSend(sender: ID!, receiver: ID!): Messages!
+}
